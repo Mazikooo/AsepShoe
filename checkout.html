@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AsepShoe - Rekomendasi</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      footer{
+        margin-top: 300px;
+      }
+
+      .cart-table th,
+      .cart-table td {
+        vertical-align: middle;
+        border: none;
+      }
+
+      .cart-table th {
+        background-color: #f8f8f8;
+        text-align: center;
+      }
+
+      .product-img {
+        width: 150px;
+        height: auto;
+        margin-right: 15px;
+      }
+
+      .quantity-input {
+        width: 60px;
+      }
+
+      .btn-plus {
+        background-color: none;
+        color: #3a006a;
+        border: none;
+        font-weight: 900;
+        padding: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .table-bordered {
+        border: 2px solid #ddd;
+      }
+
+      .table-bordered th {
+        color: #3a006a;
+      }
+
+      .table-bordered td.text-right {
+        text-align: right;
+      }
+
+      h4.text-center {
+        background-color: #f8f8f8;
+        padding: 10px;
+        margin: 0 -15px;
+        color: #3a006a;
+        font-weight: 300;
+      }
+
+      h5 {
+        text-align: center;
+        color: #3a006a;
+        font-weight: 300;
+      }
+
+      .text-purple {
+        color: #4b0082;
+        font-weight: 600;
+      }
+      #purple-divider {
+        border-color: #4b0082;
+        margin-left: 5px;
+        border-width: 3px;
+        width: 100%;
+      }
+      .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .search-input {
+            border: none;
+            padding: 5px -50px;
+            outline: none;
+            flex: 1;
+        }
+        .search-button {
+            background-color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .search-button i {
+            color: #4b0082;
+        }
+        .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+          background-color: #4b0082;
+          border-color: #4b0082;
+        }
+        .custom-control.custom-checkbox {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .btn-purple {
+          background-color: #4b0082;
+          border-color: #4b0082;
+          color: white;
+        }
+        .btn-purple:hover {
+          background-color: #620aa1;
+          border-color: #620aa1;
+          color: white;
+        }
+        /* .header-row {
+            background-color: #ff0000 !important; 
+        } */
+    </style>
+  </head>
+  <body>
+    <header class="text-white py-4" style="background-color: #4b0082;">
+      <div class="container d-flex justify-content-between align-items-center">
+          <a href="index.html" class="text-white text-decoration-none">
+              <h1 class="m-0 mr-auto">AsepShoe</h1>
+          </a>
+          <nav class="ml-auto">
+              <ul class="nav">
+                  <li class="nav-item"><a class="nav-link text-white" href="sepatu.html">Sepatu</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="artikel.html">Artikel</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="rekomendasi.html">Rekomendasi</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="bantuan.html">Bantuan</a></li>
+                  <li class="nav-item">
+                      <div class="search-bar">
+                          <input type="text" placeholder="Cari..." class="search-input">
+                          <button class="search-button"><i class="fas fa-paper-plane"></i></button>
+                      </div>
+                  </li>
+              </ul>
+          </nav>
+          <div class="cart-icon ml-4">
+              <a href="cart.html" class="text-white"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+      </div>
+  </header>
+
+    <div class="main-content container my-5">
+      <div class="row">
+        <div class="col-md-8">
+          <table class="table table-bordered cart-table">
+            <thead>
+              <tr>
+                <th colspan="4" class="text-center">
+                  <h4 class="mb-0" style="color: #3a006a; font-weight: 300">
+                    ITEM BELANJA
+                  </h4>
+                </th>
+              </tr>
+              <tr class="header-row">
+                <th>ITEM</th>
+                <th style="width: 10%;">HARGA</th>
+                <th>JUMLAH</th>
+                <th style="width: 10%;">SUB TOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="d-flex align-items-center">
+                  <img src="images/rekomendasi/nike1.png" alt="Product Image" class="product-img" />
+                  <div class="ml-3">
+                    <p class="m-0 font-weight-bold" style="color: #3a006a">
+                      NIKE
+                    </p>
+                    <p class="m-0">
+                      Air Force 1 '07 Men's Basketball Shoes - Black
+                    </p>
+                    <p class="text-muted m-0 mt-4">
+                      <span class="text-purple">Size US</span> 10
+                    </p>
+                  </div>
+                </td>
+                <td style="font-weight: 600; white-space: nowrap;">Rp. 1.200.000</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <input type="number" class="form-control text-center mx-2 quantity-input" value="1" />
+                    <!-- <button class="btn btn-plus">+</button> -->
+                  </div>
+                </td>
+                <td style="font-weight: 600; white-space: nowrap;">Rp. 1.200.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-4 mx-auto">
+          <h4 class="mb-4 text-center">RINCIAN BELANJA</h4>
+          <hr id="purple-divider" class="section-divider" />
+          <div class="d-flex justify-content-between">
+            <p class="m-0">Subtotal</p>
+            <p class="m-0" style="font-weight: 600">Rp. 1.200.000</p>
+          </div>
+          <hr id="purple-divider" class="section-divider" />
+          <div class="d-flex justify-content-between">
+            <p class="m-0">Total</p>
+            <p class="font-weight-bold" style="font-weight: 600">Rp. 1.200.000</p>
+          </div>
+          <hr id="purple-divider" class="section-divider" />
+          <h4 class="mb-4 text-center">METODE BAYAR</h4>
+          <hr id="purple-divider" class="section-divider" />
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="bca">
+              <label class="custom-control-label" for="bca">Transfer BCA</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="bri" checked>
+              <label class="custom-control-label" for="bri">Transfer BRI</label>
+            </div>
+          </div>
+          <button type="button" class="btn btn-purple btn-block" onclick="window.location.href='pemesanan.html'">BAYAR</button>
+        </div>
+      </div>
+
+      <!-- <h5 class="mt-5">YANG MUNGKIN ANDA SUKA</h5>
+      <div class="recommended-products d-flex justify-content-between mt-3">
+        <div class="card text-center">
+          <a href="tambah.html">
+            <img
+              src="images/hal_sepatu/custom-nike-dunk-high-by-you-shoes 1.png"
+              class="card-img-top"
+              alt="Product 1"
+            />
+          </a>
+          <div class="card-body">
+            <h6 class="card-title">NIKE Air Force 1 '07</h6>
+            <p class="card-text">Rp. 1.999.000</p>
+            <div class="star-rating">
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card text-center">
+          <a href="tambah.html">
+            <img
+              src="images/hal_sepatu/download 1.png"
+              class="card-img-top"
+              alt="Product 2"
+            />
+          </a>
+          <div class="card-body">
+            <h6 class="card-title">NEW BALANCE 574</h6>
+            <p class="card-text">Rp. 849.000</p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card text-center">
+          <a href="tambah.html">
+            <img
+              src="images/hal_sepatu/air-force-1-07-shoes-VWCc04 4.png"
+              class="card-img-top"
+              alt="Product 3"
+            />
+          </a>
+          <div class="card-body">
+            <h6 class="card-title">NIKE Air Force 1 '07 WB</h6>
+            <p class="card-text">Rp. 1.999.000</p>
+            <div class="star-rating">
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-center">
+          <a href="tambah.html">
+            <img
+              src="images/hal_sepatu/custom-nike-dunk-high-by-you-shoes 1.png"
+              class="card-img-top"
+              alt="Product 4"
+            />
+          </a>
+          <div class="card-body">
+            <h6 class="card-title">NEW BALANCE 574</h6>
+            <p class="card-text">Rp. 849.000</p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card text-center">
+          <a href="tambah.html">
+            <img
+              src="images/hal_sepatu/custom-nike-dunk-high-by-you-shoes 1.png"
+              class="card-img-top"
+              alt="Product 4"
+            />
+          </a>
+          <div class="card-body">
+            <h6 class="card-title">NEW BALANCE 574</h6>
+            <p class="card-text">Rp. 849.000</p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card text-center">
+          <a href="tambah.html">
+            <img
+              src="images/hal_sepatu/custom-nike-dunk-high-by-you-shoes 1.png"
+              class="card-img-top"
+              alt="Product 4"
+            />
+          </a>
+          <div class="card-body">
+            <h6 class="card-title">NEW BALANCE 574</h6>
+            <p class="card-text">Rp. 849.000</p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </div> 
+
+    <footer class="text-white py-4" style="background-color: #4b0082;">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <h3 style="margin-bottom: 50px;">AsepShoe 2024</h3>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white"></a></li>
+                  </ul>
+              </div>
+              <div class="col-md-6">
+                  <h3></h3>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white"></a></li>
+                      <li><a href="#" class="text-white"></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

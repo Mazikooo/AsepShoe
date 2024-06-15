@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsepShoe - Sepatu</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+            html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .card  {
+        transition: transform 0.3s ease; 
+        }
+
+        .card:hover  {
+            transform: scale(1.03); 
+        }
+        .sepatu-img {
+            width: 80% !important; 
+            height: auto !important; 
+            object-fit: cover !important; 
+            }
+
+        
+        main {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 0;
+            align-self: flex-start;
+            padding-top: 20px; 
+            height: 100vh; 
+            overflow-y: auto;
+            background-color: #4b0082; 
+            color: white; 
+        }
+
+        .sidebar h3 {
+            color: white;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+        .sidebar h3, .sidebar h4, .sidebar label {
+            color: white;
+        }
+        .sidebar input, .sidebar select {
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-size: 1rem;
+        }
+        .star-rating img {
+        width: 40px; 
+        margin-left: 20px;
+        height: auto;
+    }
+        .card-text {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .section-divider {
+            border: 0;
+            border-top: 1px solid white;
+            margin: 20px 0;
+        }
+
+        #purple-divider {
+        border-color: #4b0082; 
+        margin-left: 5px;
+        border-width: 3px;
+        width: 80%;
+    }
+
+        .color-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: -50px;
+    }
+        .color-box {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            border-radius: 50%;
+        }
+
+        .bg-grey { background-color: grey; }
+        .bg-brown { background-color: brown; }
+        .bg-green { background-color: green; }
+        .bg-blue { background-color: blue; }
+        .bg-lightblue { background-color: #5570FF; }
+        .bg-red { background-color: red; }
+        .bg-black { background-color: black; }
+
+        footer {
+            margin-top: auto;
+            background-color: #4b0082;
+            background-size: cover; 
+            background-position: center; 
+            color: white;
+            padding: 20px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .search-input {
+            border: none;
+            padding: 5px -50px;
+            outline: none;
+            flex: 1;
+        }
+        .search-button {
+            background-color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .search-button i {
+            color: #4b0082;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-white py-4" style="background-color: #4b0082;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="text-white text-decoration-none">
+                <h1 class="m-0 mr-auto">AsepShoe</h1>
+            </a>
+            <nav class="ml-auto">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="sepatu.html">Sepatu</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="artikel.html">Artikel</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="rekomendasi.html">Rekomendasi</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="bantuan.html">Bantuan</a></li>
+                    <li class="nav-item">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Cari..." class="search-input">
+                            <button class="search-button"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cart-icon ml-4">
+                <a href="cart.html" class="text-white"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+    
+ 
+    
+    <main class="container-fluid m-0 p-0 d-flex">
+        <aside class="sidebar col-md-3 p-0" style="padding-left: 30px;">
+            <div class="p-3" >
+                <hr class="section-divider">
+                <h3>Jenis Kelamin</h3>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="pria">
+                    <label class="form-check-label" for="pria">Pria</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="wanita">
+                    <label class="form-check-label" for="wanita">Wanita</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="anak">
+                    <label class="form-check-label" for="anak">Anak</label>
+                </div>
+                
+                <hr class="section-divider">
+                <h3 class="mt-4">Sepatu</h3>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="casual">
+                    <label class="form-check-label" for="casual">Sepatu Casual</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="basketball">
+                    <label class="form-check-label" for="basketball">Sepatu Basketball</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="anak-sepatu">
+                    <label class="form-check-label" for="anak-sepatu">Sepatu Anak</label>
+                </div>
+
+                <hr class="section-divider">
+                <h3 class="mt-4">Ukuran</h3>
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary mb-2">
+                        <input type="checkbox"> US 6
+                    </label>
+                    <label class="btn btn-secondary mb-2">
+                        <input type="checkbox"> US 7
+                    </label>
+                    <label class="btn btn-secondary mb-2">
+                        <input type="checkbox"> US 8
+                    </label>
+                    <label class="btn btn-secondary mb-2">
+                        <input type="checkbox"> US 9
+                    </label>
+                    <label class="btn btn-secondary mb-2">
+                        <input type="checkbox"> US 10
+                    </label>
+                    <label class="btn btn-secondary mb-2">
+                        <input type="checkbox"> US 11
+                    </label>
+                </div>
+                <hr class="section-divider">
+                <h3 class="mt-4">Warna</h3>
+                <div class="color-grid">
+                    <div class="color-box bg-white border"></div>
+                    <div class="color-box bg-grey border"></div>
+                    <div class="color-box bg-black border"></div>
+                    <div class="color-box bg-brown border"></div>
+                    <div class="color-box bg-green border"></div>
+                    <div class="color-box bg-lightblue border"></div>
+                    <div class="color-box bg-blue border"></div>
+                    <div class="color-box bg-red border"></div>
+                </div>
+            </div>
+        </aside>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <a href="tambah.html" style="display: flex; justify-content: center; align-items: center;">
+                                <img src="images/hal_sepatu/custom-nike-dunk-high-by-you-shoes 1.png" class="card-img-top sepatu-img" alt="AIR FORCE 1 '07 MEN'S BASKETBALL SHOES - BLACK" style="width: 80%; height: auto;">
+                            </a>
+                        
+                            <div class="card-body">
+                                <hr id="purple-divider" class="section-divider">
+                                <h5 class="card-title">AIR FORCE 1 '07 MEN'S BASKETBALL SHOES - BLACK</h5>
+                                <p class="card-text">Rp.1.000.000</p>
+                                <div class="star-rating">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <a href="tambah.html" style="display: flex; justify-content: center; align-items: center;">
+                                <img src="images/hal_sepatu/air-max-97-shoes-EBZrb8 1.png" class="card-img-top sepatu-img" alt="AIR FORCE 1 BOYS' GRADE SCHOOL SNEAKERS SHOES - UNIVERSITY BLACK" style="width: 90%; height: auto;">
+                            </a>
+                            
+                            <div class="card-body">
+                                <hr id="purple-divider" class="section-divider">
+                                <h5 class="card-title">AIR FORCE 1 BOYS' GRADE SCHOOL SNEAKERS SHOES - UNIVERSITY BLACK</h5>
+                                <p class="card-text">Rp.675.000</p>
+                                <div class="star-rating">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                    <img src="images/star.png" alt="Star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <a href="tambah.html" style="display: flex; justify-content: center; align-items: center;">
+                                <img src="images/hal_sepatu/download 1.png" class="card-img-top sepatu-img" alt="AIR FORCE 1 '07 WB MEN'S BASKETBALL SHOES - LT IRON ORE" style="width: 80%; height: auto;">
+                            </a>
+                        
+                            <div class="card-body">
+                                <hr id="purple-divider" class="section-divider">
+                                <h5 class="card-title">AIR FORCE 1 '07 WB MEN'S BASKETBALL SHOES - LT IRON ORE</h5>
+                                <p class="card-text">Rp.1.200.000</p>
+                                <div class="star-rating">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <a href="tambah.html" style="display: flex; justify-content: center; align-items: center;">
+                                <img src="images/hal_sepatu/air-force-1-07-shoes-VWCc04 4.png" class="card-img-top sepatu-img" alt="AIR FORCE 1 '07 MEN'S SNEAKERS SHOES - BLACK" style="width: 80%; height: auto;">
+                            </a>
+                        
+                            <div class="card-body">
+                                <hr id="purple-divider" class="section-divider">
+                                <h5 class="card-title">AIR FORCE 1 '07 MEN'S SNEAKERS SHOES - BLACK</h5>
+                                <p class="card-text">Rp.850.000</p>
+                                <div class="star-rating">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                    <img src="images/start__empty.png" alt="Star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-white py-4" style="background-color: #4b0082;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="margin-bottom: 100px; padding-left: 200px;">AsepShoe 2024</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white"></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3></h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white"></a></li>
+                        <li><a href="#" class="text-white"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
